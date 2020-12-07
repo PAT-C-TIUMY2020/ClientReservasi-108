@@ -37,9 +37,9 @@
   <xs:element name="ArrayOfPemesanan" nillable="true" type="tns:ArrayOfPemesanan" />
   <xs:complexType name="Pemesanan">
     <xs:sequence>
-      <xs:element minOccurs="0" name="IDLokasi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IDPemesanan" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="JumlahPemesanan" type="xs:int" />
+      <xs:element minOccurs="0" name="Lokasi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NamaCustomer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NoTelpon" nillable="true" type="xs:string" />
     </xs:sequence>

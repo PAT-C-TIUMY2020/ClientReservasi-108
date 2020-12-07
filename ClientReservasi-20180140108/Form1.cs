@@ -52,7 +52,7 @@ namespace ClientReservasi_20180140108
             string NamaCustomer = textBoxNama.Text;
             string NoTelpon = textBoxNoTlf.Text;
 
-            var a = service.editPemesanan(IDPemesanan, NamaCustomer); //NoTelpon
+            var a = service.editPemesanan(IDPemesanan, NamaCustomer, NoTelpon);
             MessageBox.Show(a);
             TampilData();
             Clear();
@@ -113,6 +113,11 @@ namespace ClientReservasi_20180140108
 
             btSimpan.Enabled = false;
             textBoxID.Enabled = false;
+        }
+
+        private void dtPemesanan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

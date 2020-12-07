@@ -193,13 +193,13 @@ namespace ClientReservasi_20180140108.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IDLokasiField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IDPemesananField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int JumlahPemesananField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LokasiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NamaCustomerField;
@@ -214,19 +214,6 @@ namespace ClientReservasi_20180140108.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IDLokasi {
-            get {
-                return this.IDLokasiField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IDLokasiField, value) != true)) {
-                    this.IDLokasiField = value;
-                    this.RaisePropertyChanged("IDLokasi");
-                }
             }
         }
         
@@ -252,6 +239,19 @@ namespace ClientReservasi_20180140108.ServiceReference1 {
                 if ((this.JumlahPemesananField.Equals(value) != true)) {
                     this.JumlahPemesananField = value;
                     this.RaisePropertyChanged("JumlahPemesanan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Lokasi {
+            get {
+                return this.LokasiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LokasiField, value) != true)) {
+                    this.LokasiField = value;
+                    this.RaisePropertyChanged("Lokasi");
                 }
             }
         }
@@ -303,10 +303,10 @@ namespace ClientReservasi_20180140108.ServiceReference1 {
         System.Threading.Tasks.Task<string> pemesananAsync(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editPemesanan", ReplyAction="http://tempuri.org/IService1/editPemesananResponse")]
-        string editPemesanan(string IDPemesanan, string NamaCustomer);
+        string editPemesanan(string IDPemesanan, string NamaCustomer, string No_telpon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editPemesanan", ReplyAction="http://tempuri.org/IService1/editPemesananResponse")]
-        System.Threading.Tasks.Task<string> editPemesananAsync(string IDPemesanan, string NamaCustomer);
+        System.Threading.Tasks.Task<string> editPemesananAsync(string IDPemesanan, string NamaCustomer, string No_telpon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deletePemesanan", ReplyAction="http://tempuri.org/IService1/deletePemesananResponse")]
         string deletePemesanan(string IDPemesanan);
@@ -396,12 +396,12 @@ namespace ClientReservasi_20180140108.ServiceReference1 {
             return base.Channel.pemesananAsync(IDPemesanan, NamaCustomer, NoTelpon, JumlahPemesanan, IDLokasi);
         }
         
-        public string editPemesanan(string IDPemesanan, string NamaCustomer) {
-            return base.Channel.editPemesanan(IDPemesanan, NamaCustomer);
+        public string editPemesanan(string IDPemesanan, string NamaCustomer, string No_telpon) {
+            return base.Channel.editPemesanan(IDPemesanan, NamaCustomer, No_telpon);
         }
         
-        public System.Threading.Tasks.Task<string> editPemesananAsync(string IDPemesanan, string NamaCustomer) {
-            return base.Channel.editPemesananAsync(IDPemesanan, NamaCustomer);
+        public System.Threading.Tasks.Task<string> editPemesananAsync(string IDPemesanan, string NamaCustomer, string No_telpon) {
+            return base.Channel.editPemesananAsync(IDPemesanan, NamaCustomer, No_telpon);
         }
         
         public string deletePemesanan(string IDPemesanan) {
